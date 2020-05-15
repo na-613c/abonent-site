@@ -158,7 +158,7 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
             $('#validator_correct').show();
         } else {
 
-            let myKey = $("#id_").val()
+            const myKey = $("#id_").val();
 
             let newAbonent = {
                 lastname: $("#lastname_").val(),
