@@ -172,7 +172,7 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
             };
 
             console.log(newAbonent);
-            console.log(myKey)
+            console.log(myKey);
 
             $(".collapse").collapse('hide');
 
