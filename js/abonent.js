@@ -171,7 +171,7 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
                 tarif: $("#tarif_").val(),
             };
 
-            console.log(newAbonent)
+            console.log(newAbonent);
             console.log(myKey)
 
             $(".collapse").collapse('hide');
