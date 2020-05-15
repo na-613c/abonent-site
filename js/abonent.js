@@ -130,7 +130,7 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
 
         console.log(lastname + " _ " + firstname + " _ " + middlename + " _ " + street + " _ " + building + " _ " + flat + " _ " + phone + " _ " + tarif);
 
-    }
+    };
 
     $scope.updateAbonent = function () {
 
