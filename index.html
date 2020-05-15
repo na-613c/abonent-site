@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    <link rel="shortcut icon" href="https://privatcredit.com.ua/wp-content/uploads/2018/05/installments-car.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <meta charset="utf-8">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css/index.css" rel="stylesheet">
+</head>
+
+<body ng-app="Abonent" class="myBG" ng-controller="AbonentController">
+    <header>
+
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">Абоненты</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" href="#">Админ</a>
+
+                        <!-- <input value="Войти" type="submit" onclick="admin()">&nbsp &nbsp &nbsp -->
+                    </li>
+                </ul>
+                <form class="form-inline mt-2 mt-md-0">
+                    <input ng-model="searchText" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                </form>
+            </div>
+        </nav>
+    </header>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Админпанель</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+               </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="recipient-name">Логин: </label>
+                            <input type="text" class="form-control" id="id_1">
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name">Пароль: </label>
+                            <input type="password" class="form-control" id="id_2">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary" onclick="user()">Войти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function user() {
+            var login = document.getElementById("id_1").value;
+            var pass = document.getElementById("id_2").value;
+
+            if (login == "admin") {
+                if (pass == "admin") {
+                    location.href = 'admin.html';
+                } else {
+                    alert("Неверный пароль!");
+                }
+            } else {
+                alert("Неверный логин!");
+            }
+        }
+    </script>
+
+    <section>
+
+        <br>
+        <br>
+        <h1>Fixed Table header</h1>
+        <div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                        <th>Фамилия</th>
+                        <th>Имя</th>
+                        <th>Отчество</th>
+                        <th>Улица</th>
+                        <th>Дом</th>
+                        <th>Квартира</th>
+                        <th>Телефон</th>
+                        <th>Тариф</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr ng-repeat="obj in abonent | filter:searchText">
+                        <td>{{obj.lastname}}</td>
+                        <td>{{obj.firstname}}</td>
+                        <td>{{obj.middlename}}</td>
+                        <td>{{obj.street}}</td>
+                        <td>{{obj.building}}</td>
+                        <td>{{obj.flat}}</td>
+                        <td>{{obj.phone}}</td>
+                        <td>{{obj.tarif}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- follow me template -->
+    <footer>
+        <div class="made-with-love ">
+            2020 ТЕБЕ НАДО СДЕЛАТЬ ФУТЕР НОРМАЛЬНЫЙ !
+            <a target="_blank" href=></a>
+        </div>
+    </footer>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyB113E0I4acn3ZALp8H9ggaG61l8hVDPQs",
+            authDomain: "database-525b7.firebaseapp.com",
+            databaseURL: "https://database-525b7.firebaseio.com",
+            projectId: "database-525b7",
+            storageBucket: "database-525b7.appspot.com",
+            messagingSenderId: "688730230610",
+            appId: "1:688730230610:web:ded09e178d97fd3569348b",
+            measurementId: "G-MS3JK4911R"
+        };
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="js/abonent.js"></script>
+</body>
+
+</html>

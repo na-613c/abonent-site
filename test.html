@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function myFunc() {
+            let peremennay = $("#test-id").val() // это значение из инпута, типо его же и выведем
+                // null, пропускать только цифры
+            if ($("#test-id").val() == "" || !/\d/.test($("#test-id").val())) {
+                alert("Введите данные ")
+            } else {
+                alert("Данные записаны:  " + peremennay) // "0-9" - это строка, типо как просто написанный текст 0-9
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" required pattern="\d+$" id="test-id">
+        <!-- ВАЛИДАЦИЯ HTML  pattern 
+        +$ -это без ограничения по длине, т.к. \d - 1 цифра -->
+        <input type="submit" onclick="myFunc()" value="КНОПКА">
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
