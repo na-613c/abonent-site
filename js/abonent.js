@@ -97,7 +97,7 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
                 firebase.database().ref().push().set(data);
             }
 
-            write(data)
+            write(data);
         }
     }
 
@@ -160,7 +160,7 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
 
             const myKey = $("#id_").val();
 
-            let newAbonent = {
+            const newAbonent = {
                 lastname: $("#lastname_").val(),
                 firstname: $("#firstname_").val(),
                 middlename: $("#middlename_").val(),
@@ -181,6 +181,6 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
 
         $scope.deleteAbonent = function (id) {
             firebase.database().ref().child(id).remove();
-        }
-    }
-})
+        };
+    };
+});
