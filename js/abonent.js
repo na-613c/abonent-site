@@ -2,7 +2,19 @@ function hide() {
     $('#collapseOne').hide();
 }
 
-let bool1 = true; //2 переменные (флага)
+function addDate(){
+    let monthNames = ["январь", "февраль", "март", "апрель", "май", "июнь","июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"];
+    
+    const date = new Date();
+    const year = date.getFullYear()
+    const month = date.getMonth()
+    const day = date.getDate()
+    
+    const dateRegistration = `${day} ${monthNames[month]} ${year}`;
+    return dateRegistration
+}
+
+let bool1 = true;
 let bool2 = true;
 let arrayData = [];
 
@@ -45,9 +57,8 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
     });
 
 
-    function read() { //короче read() вызывается только когда данные изменяются в бд, вроде норм так
+    function read() {
         $http.put(`http://localhost`, JSON.stringify({}));
-        //пустой запрос в никуда, когда данные из ФБ получены
 
         console.log(arrayData);
         $scope.abonent = arrayData;
@@ -81,6 +92,7 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
             $('#validator_correct').show();
 
         } else {
+
             let data = {
                 lastname: $("#lastname_").val(),
                 firstname: $("#firstname_").val(),
@@ -90,13 +102,13 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
                 flat: $("#flat_").val(),
                 phone: $("#phone_").val(),
                 tarif: $("#tarif_").val(),
+                date: addDate()
             };
             $(".collapse").collapse('hide');
-
+            
             function write(data) {
                 firebase.database().ref().push().set(data);
             }
-
             write(data);
         }
     }
@@ -169,6 +181,7 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
                 flat: $("#flat_").val(),
                 phone: $("#phone_").val(),
                 tarif: $("#tarif_").val(),
+                date: addDate()
             };
 
             console.log(newAbonent);
@@ -179,8 +192,10 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
             firebase.database().ref().child(myKey).set(newAbonent);
         }
 
-        $scope.deleteAbonent = function (id) {
-            firebase.database().ref().child(id).remove();
-        };
     };
+
+    $scope.deleteAbonent = function (id) {
+        firebase.database().ref().child(id).remove();
+    };
+
 });

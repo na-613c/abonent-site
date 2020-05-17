@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
-    <link rel="shortcut icon" href="https://privatcredit.com.ua/wp-content/uploads/2018/05/installments-car.png">
+    <link rel="shortcut icon" href="img/ic_launcher-web.png">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
     <meta charset="utf-8">
     <!-- Bootstrap core CSS -->
@@ -48,7 +48,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Админпанель</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                    <span aria-hidden="true">&times;</span>
-               </button>
+                </button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -103,6 +103,7 @@
                         <th>Квартира</th>
                         <th>Телефон</th>
                         <th>Тариф</th>
+                        <th>Дата</th>
                     </tr>
                 </thead>
             </table>
@@ -119,6 +120,7 @@
                         <td>{{obj.flat}}</td>
                         <td>{{obj.phone}}</td>
                         <td>{{obj.tarif}}</td>
+                        <td>{{obj.date}}</td>
                     </tr>
                 </tbody>
             </table>
