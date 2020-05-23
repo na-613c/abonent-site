@@ -65,7 +65,6 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
         arrayData = [];
     }
 
-
     $scope.addAbonent = function () {
 
         $('#validator_filled').hide();

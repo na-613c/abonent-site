@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Администратор</title>
     <link rel="shortcut icon" href="img/ic_launcher-web.png">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
     <meta charset="utf-8">
@@ -20,7 +20,7 @@
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a class="navbar-brand" href="#">Fixed navbar</a>
+            <a class="navbar-brand" href="#">Абоненты</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,18 +29,17 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Главная</a>
                         <li class="nav-item">
-                            <a class="nav-link  active" href="admin.html">Админ</a>
+                            <a class="nav-link  active" href="admin.html">Администратор</a>
                         </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">
-                    <input ng-model="searchText" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <input ng-model="searchText" class="form-control mr-sm-2" type="text" placeholder="Поиск" aria-label="Search">
                 </form>
             </div>
         </nav>
     </header>
 
     <main class=" flex-shrink-0 mt-5" role="main">
-        <!-- ФОРМА ДЛЯ ЗАПОЛЕНИЯ с полями, и ты сюда же бок пихаешь - вот он и такой -->
         <br>
         <div class="container py-3 my-5 backgroung-opacity ">
             <div class="row justify-content-md-center  ">
@@ -121,8 +120,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- короче делаешь ид как там были у полей и всё рабтает. 
-                    и еще 1 кнопку добавить с ng-lick что-то там, что в кнопке добавить быоло -->
             </div>
             <div class="row justify-content-md-center  ">
                 <div class="col-5">
@@ -245,13 +242,11 @@
                 </div>
             </div>
 
-
-
         </div>
         <div class="container">
             <div class="bg-faded p-4 my-4">
                 <div class="row pt-4">
-                    <h1>Таблица пользователей</h1>
+                    <h1>Таблица абонентов</h1>
                     <div class="tbl-header">
                         <table cellpadding="0" cellspacing="0" border="0">
                             <thead>
@@ -264,7 +259,7 @@
                                     <th>Квартира</th>
                                     <th>Телефон</th>
                                     <th>Тариф</th>
-                                    <th>DATE</th>
+                                    <th>Дата</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -313,7 +308,7 @@
             <hr>
             <!-- Footer -->
             <footer class="container-fluid bg-4 text-center">
-                <p>Сайт для оператора мобильной связи <a href="https://www.bsuir.by/">БГУИР 2020</a></p>
+                <!--<p>Сайт для оператора мобильной связи <a href="https://www.bsuir.by/">БГУИР 2020</a></p>-->
             </footer>
         </div>
         </div>
