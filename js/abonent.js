@@ -40,13 +40,10 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
 
                 if (key == keyData) {
                     value.id = key
-                    // console.log(value)
                     return oneAbonentInfo = value;
                 }
                 return value;
             });
-            console.log(oneAbonentInfo);
-
             arrayData.unshift(oneAbonentInfo);
         }
 
@@ -60,7 +57,6 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
     function read() {
         $http.put(`http://localhost`, JSON.stringify({}));
 
-        console.log(arrayData);
         $scope.abonent = arrayData;
         arrayData = [];
     }
@@ -183,18 +179,13 @@ abonent.controller('AbonentController', function ($scope, $http, $window) {
                 date: addDate()
             };
 
-            console.log(newAbonent);
-            console.log(myKey);
-
             $(".collapse").collapse('hide');
 
             firebase.database().ref().child(myKey).set(newAbonent);
         }
-
     };
 
     $scope.deleteAbonent = function (id) {
         firebase.database().ref().child(id).remove();
     };
-
 });

@@ -8,17 +8,15 @@
     <link rel="shortcut icon" href="img/ic_launcher-web.png">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
     <meta charset="utf-8">
-    <!-- Bootstrap core CSS -->
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
-    <!-- Custom styles for this template -->
     <link href="css/index.css" rel="stylesheet">
 
 </head>
 
 <body ng-app="Abonent" class="myBG" ng-controller="AbonentController">
     <header>
-        <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <a class="navbar-brand" href="#">Абоненты</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -195,18 +193,18 @@
                                                 d="M1 13.5A1.5 1.5 0 002.5 15h11a1.5 1.5 0 001.5-1.5v-6a.5.5 0 00-1 0v6a.5.5 0 01-.5.5h-11a.5.5 0 01-.5-.5v-11a.5.5 0 01.5-.5H9a.5.5 0 000-1H2.5A1.5 1.5 0 001 2.5v11z"
                                                 clip-rule="evenodd" />
                                         </svg></i></span>
-
                                 <input id="tarif_" list="cocktail" name="tarif" placeholder="Тариф" class="form-control" type="text">
                                 <datalist id="cocktail">
-                                    <option>Безлимит</option>
-                                    <option>Горячие</option>
+                                    <option>Безлимитище</option>
+                                    <option>Отличный</option>
+                                    <option>Maxi</option>
+                                    <option>Безлимитище 2.0</option>
                                 </datalist>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- КНОПКИ -->
             <div class="row justify-content-md-center  ">
                 <br>
                 <div class="col-5">
@@ -217,7 +215,6 @@
                                     <button ng-click="addAbonent()" type="submit" class="btn btn-primary">
                                         Добавить<span class="glyphicon glyphicon-send"></span>
                                     </button>
-
                                     <button ng-click="updateAbonent()" type="submit" class="btn btn-primary">
                                         Обновить<span class="glyphicon glyphicon-send"></span>
                                     </button>
@@ -232,16 +229,13 @@
                 </div>
                 <div class="col-5">
                     <div class="form-group">
-
                         <div class="col-md-10 inputGroupContainer">
                             <div class="input-group">
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
         <div class="container">
             <div class="bg-faded p-4 my-4">
@@ -305,24 +299,15 @@
                     </div>
                 </div>
             </div>
-            <hr>
-            <!-- Footer -->
-            <footer class="container-fluid bg-4 text-center">
-                <!--<p>Сайт для оператора мобильной связи <a href="https://www.bsuir.by/">БГУИР 2020</a></p>-->
-            </footer>
         </div>
         </div>
     </main>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-    https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
 
     <script>
-        // Your web app's Firebase configuration
         var firebaseConfig = {
             apiKey: "AIzaSyB113E0I4acn3ZALp8H9ggaG61l8hVDPQs",
             authDomain: "database-525b7.firebaseapp.com",
@@ -333,16 +318,13 @@
             appId: "1:688730230610:web:ded09e178d97fd3569348b",
             measurementId: "G-MS3JK4911R"
         };
-        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
     </script>
-
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
     <script src="js/abonent.js"></script>
 </body>
-
 </html>
